@@ -10,5 +10,5 @@ export PATH="$POS:/usr/local/bin:/usr/bin:/usr/sbin:/sbin"
 yt-dlp -f "bestvideo[ext=mp4]+bestaudio[ext=m4a]/best[ext=mp4]/best" \
        --merge-output-format mp4 \
        --no-check-certificate \
-       -o - \
+       -o "%(title).64s" \
        "$URL"
