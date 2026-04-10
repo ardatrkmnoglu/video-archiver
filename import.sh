@@ -3,8 +3,9 @@
 SOURCE_DIR="$HOME/Desktop/tw-videos"
 OS_TYPE=$(uname)
 
-if [ ! "OS_TYPE" == "Darwin" ]; then
+if [ ! "$OS_TYPE" == "Darwin" ]; then
     echo "ERROR: This operation works only in macOS."
+    echo "OS Type: $OS_TYPE"
     exit 1
 fi
 
