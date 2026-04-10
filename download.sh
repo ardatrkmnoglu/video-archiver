@@ -27,7 +27,7 @@ echo "Target: $TARGET_DIR"
 
 yt-dlp -f "bestvideo[ext=mp4]+bestaudio[ext=m4a]/best[ext=mp4]/best" \
        --merge-output-format mp4 \
-       -o "$TARGET_DIR/${CONTENT} %(title).64s" \
+       -o "$TARGET_DIR/${CONTENT} %(title).64s.mp4" \
        "$URL"
 
 if [ $? -eq 0 ]; then
@@ -46,6 +46,7 @@ if [ $? -eq 0 ]; then
             end tell
 EOT
         echo "Video successfully imported to the Photo Library: $(basename "$FILE")"
+        rm "$FILE"
     fi
 else
     echo "An error occured while downloading."
