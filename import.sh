@@ -14,6 +14,9 @@ if [ ! -d "$SOURCE_DIR" ]; then
     exit 1
 fi
 
+cd "$SOURCE_DIR"
+mkdir -p imported
+
 echo "Importing videos from $SOURCE_DIR"
 
 find "$SOURCE_DIR" -maxdepth 1 -name "*.mp4" | while read -r video_path; do
@@ -25,6 +28,8 @@ find "$SOURCE_DIR" -maxdepth 1 -name "*.mp4" | while read -r video_path; do
             import POSIX file "$video_path"
         end tell
 EOT
+
+mv "$filename" imported
 
 done
 
