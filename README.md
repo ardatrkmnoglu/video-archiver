@@ -16,3 +16,8 @@ Automated Internet video archiving & importing script.
 ### Dependencies
 - `yt-dlp`
 - `ffmpeg`
+
+### Supported Platforms (known to work without issues)
+- Twitter
+- TikTok
+- YouTube (while importing through SSH, use `yt_save_remote` script instead)
